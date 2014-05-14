@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1378955-0815-4277-B150-5D0E46C2BABF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoBarajas</RootNamespace>
+    <AssemblyName>ProyectoBarajas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ad_AdministracionAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_AdministracionAlumnos.Designer.cs">
+      <DependentUpon>Ad_AdministracionAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_AdministracionProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_AdministracionProfesores.Designer.cs">
+      <DependentUpon>Ad_AdministracionProfesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_ContactosAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_ContactosAlumnos.Designer.cs">
+      <DependentUpon>Ad_ContactosAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_NuevoAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_NuevoAlumno.Designer.cs">
+      <DependentUpon>Ad_NuevoAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_NuevoProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_NuevoProfesor.Designer.cs">
+      <DependentUpon>Ad_NuevoProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Input.cs" />
+    <Compile Include="P_AlumnosInscritos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_AlumnosInscritos.Designer.cs">
+      <DependentUpon>P_AlumnosInscritos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Al_CalificacionesAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Al_CalificacionesAlumnos.Designer.cs">
+      <DependentUpon>Al_CalificacionesAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Al_CatalogoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Al_CatalogoCursos.Designer.cs">
+      <DependentUpon>Al_CatalogoCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ad_ContactosProfesores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ad_ContactosProfesores.Designer.cs">
+      <DependentUpon>Ad_ContactosProfesores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Cursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Cursos.Designer.cs">
+      <DependentUpon>P_Cursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Al_CursosSolicitados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Al_CursosSolicitados.Designer.cs">
+      <DependentUpon>Al_CursosSolicitados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ad_AdministracionAlumnos.resx">
+      <DependentUpon>Ad_AdministracionAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_AdministracionProfesores.resx">
+      <DependentUpon>Ad_AdministracionProfesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_ContactosAlumnos.resx">
+      <DependentUpon>Ad_ContactosAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_NuevoAlumno.resx">
+      <DependentUpon>Ad_NuevoAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_NuevoProfesor.resx">
+      <DependentUpon>Ad_NuevoProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_AlumnosInscritos.resx">
+      <DependentUpon>P_AlumnosInscritos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Al_CalificacionesAlumnos.resx">
+      <DependentUpon>Al_CalificacionesAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Al_CatalogoCursos.resx">
+      <DependentUpon>Al_CatalogoCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ad_ContactosProfesores.resx">
+      <DependentUpon>Ad_ContactosProfesores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Cursos.resx">
+      <DependentUpon>P_Cursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Al_CursosSolicitados.resx">
+      <DependentUpon>Al_CursosSolicitados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
