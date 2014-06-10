@@ -11,13 +11,14 @@ namespace ProyectoBarajas
 {
     public partial class Ad_AdministracionAlumnos : Form
     {
+        Alumno alumno;
+        DialogResult res;
+
         public Ad_AdministracionAlumnos()
         {
             InitializeComponent();
         }
 
-        private Ad_NuevoAlumno nuevoAl;
-        private Ad_ContactosAlumnos contactAl;
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
@@ -53,22 +54,102 @@ namespace ProyectoBarajas
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Resultados de la busqueda...");
-        }
-
-        private void buttonNuevo_Click(object sender, EventArgs e)
-        {
-            nuevoAl = new Ad_NuevoAlumno();
-            nuevoAl.Show();
-        }
-
-        private void dataGridViewAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridViewAlumnos.Columns[8].Index && e.RowIndex >= 0)
+            Alumno alumno = new Alumno();
+            alumno.Id = txtBusqueda.Text;
+            if (alumno.Id != "")
             {
-                contactAl = new Ad_ContactosAlumnos();
-                contactAl.Show();
+                    alumno.BuscarAlumno();
+                    dataGridViewAlumnos.DataSource = alumno.Tabla;
+
+                    if (dataGridViewAlumnos.Rows.Count <= 0)
+                    {
+                        MessageBox.Show("No Existe Dato");
+                        LlenarGrid();
+                    }
             }
+            else
+            {
+                LlenarGrid();
+            }
+        }
+
+
+        private void Ad_AdministracionAlumnos_Load(object sender, EventArgs e)
+        {
+            LlenarGrid();
+        }
+
+        public void LlenarGrid()
+        {
+            alumno = new Alumno();
+            if (alumno.leerAlumnos())
+            {
+                dataGridViewAlumnos.DataSource = alumno.Tabla;
+            }
+            else
+            {
+                MessageBox.Show(alumno.Error);
+            }
+        }
+
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            if ((txtcontrasena.Text != "") && (txtNombre.Text != "") && (txtApepat.Text != "") && (txtApemat.Text != "") && (txtDomicilio.Text != "")
+                    && (txtCp.Text != "") && (txtColonia.Text != "") && (txtMunicipio.Text != "") && (txtEstado.Text != ""))
+            {
+                res = MessageBox.Show("¿Desea guardar el registro?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+
+                    Alumno alumno = new Alumno(txtId.Text, txtcontrasena.Text, txtNombre.Text, txtApepat.Text, txtApemat.Text, txtDomicilio.Text,
+                                            txtCp.Text, txtColonia.Text, txtMunicipio.Text, txtEstado.Text, "", "");
+                        alumno.AgregarAlumno();
+                        LlenarGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Datos incompletos");
+            }
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            res = MessageBox.Show("¿Desea eliminar el registro?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Alumno alumno = new Alumno();
+                alumno.Id = txtId.Text;
+                alumno.EliminarAlumno();
+                LlenarGrid();
+            }
+        }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            res = MessageBox.Show("¿Desea modificar el registro?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                Alumno alumno = new Alumno(txtId.Text, txtcontrasena.Text, txtNombre.Text, txtApepat.Text, txtApemat.Text, txtDomicilio.Text,
+                                    txtCp.Text, txtColonia.Text, txtMunicipio.Text, txtEstado.Text, "", "");
+                alumno.ModificarAlumno();
+                LlenarGrid();
+            }
+        }
+
+        private void dataGridViewAlumnos_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dataGridViewAlumnos.CurrentRow.Cells[0].Value.ToString();
+            txtcontrasena.Text = dataGridViewAlumnos.CurrentRow.Cells[1].Value.ToString();
+            txtNombre.Text = dataGridViewAlumnos.CurrentRow.Cells[2].Value.ToString();
+            txtApepat.Text = dataGridViewAlumnos.CurrentRow.Cells[3].Value.ToString();
+            txtApemat.Text = dataGridViewAlumnos.CurrentRow.Cells[4].Value.ToString();
+            txtDomicilio.Text = dataGridViewAlumnos.CurrentRow.Cells[5].Value.ToString();
+            txtCp.Text = dataGridViewAlumnos.CurrentRow.Cells[6].Value.ToString();
+            txtColonia.Text = dataGridViewAlumnos.CurrentRow.Cells[7].Value.ToString();
+            txtMunicipio.Text = dataGridViewAlumnos.CurrentRow.Cells[8].Value.ToString();
+            txtEstado.Text = dataGridViewAlumnos.CurrentRow.Cells[9].Value.ToString();
         }
 
     }

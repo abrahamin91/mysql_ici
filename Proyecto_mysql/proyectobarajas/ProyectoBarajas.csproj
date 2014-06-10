@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\MySql.Data.DLL</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,25 +61,29 @@
     <Compile Include="Ad_AdministracionProfesores.Designer.cs">
       <DependentUpon>Ad_AdministracionProfesores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ad_ContactosAlumnos.cs">
+    <Compile Include="Alumno.cs" />
+    <Compile Include="ConnectionMySQL.cs" />
+    <Compile Include="Curso_A_Impartir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ad_ContactosAlumnos.Designer.cs">
-      <DependentUpon>Ad_ContactosAlumnos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ad_NuevoAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ad_NuevoAlumno.Designer.cs">
-      <DependentUpon>Ad_NuevoAlumno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ad_NuevoProfesor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ad_NuevoProfesor.Designer.cs">
-      <DependentUpon>Ad_NuevoProfesor.cs</DependentUpon>
+    <Compile Include="Curso_A_Impartir.Designer.cs">
+      <DependentUpon>Curso_A_Impartir.cs</DependentUpon>
     </Compile>
     <Compile Include="Input.cs" />
+    <Compile Include="Menu Profesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Profesor.Designer.cs">
+      <DependentUpon>Menu Profesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Alumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Alumnos.Designer.cs">
+      <DependentUpon>Menu_Alumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parametros.cs" />
+    <Compile Include="Profesor.cs" />
     <Compile Include="P_AlumnosInscritos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,12 +101,6 @@
     </Compile>
     <Compile Include="Al_CatalogoCursos.Designer.cs">
       <DependentUpon>Al_CatalogoCursos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ad_ContactosProfesores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ad_ContactosProfesores.Designer.cs">
-      <DependentUpon>Ad_ContactosProfesores.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Cursos.cs">
       <SubType>Form</SubType>
@@ -133,14 +134,14 @@
     <EmbeddedResource Include="Ad_AdministracionProfesores.resx">
       <DependentUpon>Ad_AdministracionProfesores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ad_ContactosAlumnos.resx">
-      <DependentUpon>Ad_ContactosAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="Curso_A_Impartir.resx">
+      <DependentUpon>Curso_A_Impartir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ad_NuevoAlumno.resx">
-      <DependentUpon>Ad_NuevoAlumno.cs</DependentUpon>
+    <EmbeddedResource Include="Menu Profesor.resx">
+      <DependentUpon>Menu Profesor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ad_NuevoProfesor.resx">
-      <DependentUpon>Ad_NuevoProfesor.cs</DependentUpon>
+    <EmbeddedResource Include="Menu_Alumnos.resx">
+      <DependentUpon>Menu_Alumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_AlumnosInscritos.resx">
       <DependentUpon>P_AlumnosInscritos.cs</DependentUpon>
@@ -150,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Al_CatalogoCursos.resx">
       <DependentUpon>Al_CatalogoCursos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ad_ContactosProfesores.resx">
-      <DependentUpon>Ad_ContactosProfesores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Cursos.resx">
       <DependentUpon>P_Cursos.cs</DependentUpon>

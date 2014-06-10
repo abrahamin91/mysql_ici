@@ -28,27 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxUser = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBoxUser
+            // txtUsuario
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(195, 75);
-            this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(100, 20);
-            this.textBoxUser.TabIndex = 0;
+            this.txtUsuario.Location = new System.Drawing.Point(195, 75);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 0;
             // 
-            // textBoxPassword
+            // txtContrasena
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(195, 129);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPassword.TabIndex = 1;
+            this.txtContrasena.Location = new System.Drawing.Point(195, 129);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '*';
+            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
+            this.txtContrasena.TabIndex = 1;
             // 
             // label1
             // 
@@ -97,11 +98,12 @@
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUser);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.txtUsuario);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,8 +111,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxUser;
-        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonAceptar;

@@ -29,67 +29,63 @@
         private void InitializeComponent()
         {
             this.dataGridViewCursosSolicitados = new System.Windows.Forms.DataGridView();
-            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Profesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PreRequisitos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clavemateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profesor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desinscribirse = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.lbIdalumno = new System.Windows.Forms.Label();
+            this.linkLabelLogoutCS = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCursosSolicitados)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewCursosSolicitados
             // 
+            this.dataGridViewCursosSolicitados.AllowUserToAddRows = false;
+            this.dataGridViewCursosSolicitados.AllowUserToDeleteRows = false;
             this.dataGridViewCursosSolicitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCursosSolicitados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Curso,
-            this.Materia,
-            this.Profesor,
-            this.Periodo,
-            this.PreRequisitos,
-            this.Eliminar});
-            this.dataGridViewCursosSolicitados.Location = new System.Drawing.Point(26, 25);
+            this.clavemateria,
+            this.materia,
+            this.periodo,
+            this.profesor,
+            this.desinscribirse});
+            this.dataGridViewCursosSolicitados.Location = new System.Drawing.Point(26, 44);
             this.dataGridViewCursosSolicitados.Name = "dataGridViewCursosSolicitados";
             this.dataGridViewCursosSolicitados.Size = new System.Drawing.Size(641, 273);
             this.dataGridViewCursosSolicitados.TabIndex = 0;
+            this.dataGridViewCursosSolicitados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCursosSolicitados_CellContentClick);
             // 
-            // Curso
+            // clavemateria
             // 
-            this.Curso.HeaderText = "Curso";
-            this.Curso.Name = "Curso";
-            this.Curso.ReadOnly = true;
+            this.clavemateria.DataPropertyName = "idcurso";
+            this.clavemateria.HeaderText = "Clave Materia";
+            this.clavemateria.Name = "clavemateria";
             // 
-            // Materia
+            // materia
             // 
-            this.Materia.HeaderText = "Materia";
-            this.Materia.Name = "Materia";
-            this.Materia.ReadOnly = true;
+            this.materia.DataPropertyName = "curso";
+            this.materia.HeaderText = "Materia";
+            this.materia.Name = "materia";
             // 
-            // Profesor
+            // periodo
             // 
-            this.Profesor.HeaderText = "Profesor";
-            this.Profesor.Name = "Profesor";
-            this.Profesor.ReadOnly = true;
+            this.periodo.DataPropertyName = "periodo";
+            this.periodo.HeaderText = "Periodo";
+            this.periodo.Name = "periodo";
             // 
-            // Periodo
+            // profesor
             // 
-            this.Periodo.HeaderText = "Periodo";
-            this.Periodo.Name = "Periodo";
-            this.Periodo.ReadOnly = true;
+            this.profesor.DataPropertyName = "nombre";
+            this.profesor.HeaderText = "Profesor";
+            this.profesor.Name = "profesor";
             // 
-            // PreRequisitos
+            // desinscribirse
             // 
-            this.PreRequisitos.HeaderText = "Pre-requisitos";
-            this.PreRequisitos.Name = "PreRequisitos";
-            this.PreRequisitos.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.desinscribirse.HeaderText = "Desinscribirse";
+            this.desinscribirse.Name = "desinscribirse";
             // 
             // buttonAceptar
             // 
@@ -111,32 +107,57 @@
             this.buttonCancelar.UseVisualStyleBackColor = true;
             this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
+            // lbIdalumno
+            // 
+            this.lbIdalumno.AutoSize = true;
+            this.lbIdalumno.Location = new System.Drawing.Point(592, 9);
+            this.lbIdalumno.Name = "lbIdalumno";
+            this.lbIdalumno.Size = new System.Drawing.Size(35, 13);
+            this.lbIdalumno.TabIndex = 3;
+            this.lbIdalumno.Text = "label1";
+            // 
+            // linkLabelLogoutCS
+            // 
+            this.linkLabelLogoutCS.AutoSize = true;
+            this.linkLabelLogoutCS.Location = new System.Drawing.Point(647, 9);
+            this.linkLabelLogoutCS.Name = "linkLabelLogoutCS";
+            this.linkLabelLogoutCS.Size = new System.Drawing.Size(40, 13);
+            this.linkLabelLogoutCS.TabIndex = 4;
+            this.linkLabelLogoutCS.TabStop = true;
+            this.linkLabelLogoutCS.Text = "Logout";
+            this.linkLabelLogoutCS.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelLogoutCS_LinkClicked);
+            // 
             // Al_CursosSolicitados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 426);
+            this.Controls.Add(this.linkLabelLogoutCS);
+            this.Controls.Add(this.lbIdalumno);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.dataGridViewCursosSolicitados);
             this.Name = "Al_CursosSolicitados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CursosSolicitados";
+            this.Load += new System.EventHandler(this.Al_CursosSolicitados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCursosSolicitados)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewCursosSolicitados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Profesor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Periodo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PreRequisitos;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Label lbIdalumno;
+        private System.Windows.Forms.LinkLabel linkLabelLogoutCS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clavemateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profesor;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn desinscribirse;
     }
 }
